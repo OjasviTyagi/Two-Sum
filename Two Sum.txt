@@ -1,0 +1,11 @@
+class Solution:
+    # Hashtable: One-pass, Make with Find
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        n = len(nums)
+        dic = collections.defaultdict(int)
+        # O(N)
+        for i in range(n):
+            complement = target - nums[i]
+            if complement in dic:
+                return [i, dic[complement]]
+            dic[nums[i]] = i
